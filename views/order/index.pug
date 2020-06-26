@@ -1,0 +1,33 @@
+extends ../layout/auth-layout
+block content
+  #page-wrapper
+    .container-fluid
+      .row.bg-title
+        .col-lg-3.col-md-4.col-sm-4.col-xs-12
+          h4.page-title Orders
+        .row
+          .col-sm-12
+            .white-box
+              //- h3.box-title Basic Table
+              p.text-muted
+                a.btn.btn-danger List Orders
+              .table-responsive
+                table.table
+                  thead
+                    tr
+                      th ID
+                      th Status
+                      th Total Price
+                      th Create order
+                      th(width='10px')
+                      th(width='10px')
+                  tbody
+                    tr
+                      td a
+                      td b
+                      td c
+                      td d
+                      td
+                        a.btn.btn-primary update
+                      td
+                        a.btn.btn-primary delete

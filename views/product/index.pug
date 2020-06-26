@@ -1,0 +1,103 @@
+extends ../layout/auth-layout
+block content
+  #page-wrapper
+    .container-fluid
+      .row.bg-title
+        .col-lg-3.col-md-4.col-sm-4.col-xs-12
+          h4.page-title Products
+        .row
+          .col-sm-12
+            .white-box
+              //- h3.box-title Basic Table
+              p.text-muted
+                #add-popup.popup
+                  // Modal content
+                  .popup-content
+                    span.popupclose(onclick='closePopupAdd();') &times;
+                    h3 Add Product
+                    form(method='post' name='popupcontact' onsubmit='popupvalidation();' action='#')
+                      .col-md-12
+                        label
+                          | Name 
+                          span.required *
+                        input(type='text' name='username')
+                      .col-md-12
+                        label
+                          | Email 
+                          span.required *
+                        input(type='text' name='uemail')
+                      .col-md-12
+                        label
+                          | Phone No. 
+                          span.required *
+                        input(type='text' name='uphoneno')
+                      .col-md-12
+                        label
+                          | Message 
+                          span.required *
+                        textarea(name='umessage' placeholder='' style='height: 130px;')
+                      .col-md-12
+                        input.btn.btn-success(type='submit' name='popupcontact' value='Submit')
+                    .clearfix
+                  .clearfix
+                input.btn.btn-danger(type='button' value='Add Product' onclick='openPopupAdd();')
+                
+              .table-responsive
+                ul.nav.navbar-top-links
+                  li
+                    a.nav-toggler.open-close.waves-effect.waves-light.hidden-md.hidden-lg(href='javascript:void(0)')
+                      i.fa.fa-bars
+                  li
+                    form.app-search.hidden-sm.hidden-xs.m-r-10(role='search')
+                      input.form-control(type='text' placeholder='Search...')
+                      a(href='')
+                        i.fa.fa-search(style='color:#ffffff')
+                table.table
+                  thead
+                    tr
+                      th ID
+                      th Product Name
+                      th Category
+                      th Price
+                      th(width='10px')
+                      th(width='10px')
+                  tbody
+                    tr
+                      td a
+                      td b
+                      td c
+                      td d
+                      td
+                        #update-popup.popup
+                          // Modal content
+                          .popup-content
+                            span.popupclose(onclick='closePopupUpdate();') &times;
+                            h3 Update Product
+                            form(method='post' name='popupcontact' onsubmit='popupvalidation();' action='#')
+                              .col-md-12
+                                label
+                                  | Name 
+                                  span.required *
+                                input(type='text' name='username')
+                              .col-md-12
+                                label
+                                  | Email 
+                                  span.required *
+                                input(type='text' name='uemail')
+                              .col-md-12
+                                label
+                                  | Phone No. 
+                                  span.required *
+                                input(type='text' name='uphoneno')
+                              .col-md-12
+                                label
+                                  | Message 
+                                  span.required *
+                                textarea(name='umessage' placeholder='' style='height: 130px;')
+                              .col-md-12
+                                input.btn.btn-success(type='submit' name='popupcontact' value='Submit')
+                            .clearfix
+                          .clearfix
+                        input.btn.btn-primary(type='button' value='Update' onclick='openPopupUpdate();')
+                      td
+                        a.btn.btn-primary Delete

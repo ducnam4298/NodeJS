@@ -1,0 +1,142 @@
+doctype html
+html
+    head
+      meta(charset='utf-8')
+      meta(http-equiv='X-UA-Compatible' content='IE=edge')
+      meta(name='viewport' content='width=device-width, initial-scale=1')
+      meta(name='description' content='')
+      meta(name='author' content='')
+      link(rel='icon' type='image/png' sizes='16x16' href='../plugins/images/favicon.png')
+      title= title
+      // Bootstrap Core CSS
+      link(href='../bootstrap/dist/css/bootstrap.min.css' rel='stylesheet')
+      // Menu CSS
+      link(href='../plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.css' rel='stylesheet')
+      // animation CSS
+      link(href='../css/animate.css' rel='stylesheet')
+      // Custom CSS
+      link(href='../css/style.css' rel='stylesheet')
+      // color CSS
+      link#theme(href='../css/colors/default.css' rel='stylesheet')
+      link(rel="stylesheet", href="../stylesheets/add-form.css")
+    // ==============================================================
+    // Preloader
+    // ==============================================================
+    .preloader
+      svg.circular(viewbox='25 25 50 50')
+        circle.path(cx='50' cy='50' r='20' fill='none' stroke-width='2' stroke-miterlimit='10')
+    // ==============================================================
+    // Wrapper
+    // ==============================================================
+    #wrapper
+      // ==============================================================
+      // Topbar header - style you can find in pages.scss
+      // ==============================================================
+      nav.navbar.navbar-default.navbar-static-top.m-b-0
+        .navbar-header
+          .top-left-part
+            // Logo
+            a.logo(href='dashboard')
+              // Logo icon image, you can use font-icon also
+              b
+                // This is dark logo icon
+                img.dark-logo(src='../plugins/images/admin-logo.png' alt='home')
+                // This is light logo icon
+                img.light-logo(src='../plugins/images/admin-logo-dark.png' alt='home')
+              // Logo text image you can use text also
+              span.hidden-xs
+                // This is dark logo text
+                img.dark-logo(src='../plugins/images/admin-text.png' alt='home')
+                // This is light logo text
+                img.light-logo(src='../plugins/images/admin-text-dark.png' alt='home')
+          // /Logo
+          ul.nav.navbar-top-links.navbar-right.pull-right
+            li
+              a.nav-toggler.open-close.waves-effect.waves-light.hidden-md.hidden-lg(href='javascript:void(0)')
+                i.fa.fa-bars
+            li
+              form.app-search.hidden-sm.hidden-xs.m-r-10(role='search')
+                input.form-control(type='text' placeholder='Search...')
+                a(href='')
+                  i.fa.fa-search(style='color:#ffffff')
+            li
+              a.profile-pic(href='#')
+                img.img-circle(src='../plugins/images/users/varun.jpg' alt='user-img' width='36')
+                b.hidden-xs Steave
+        // /.navbar-header
+        // /.navbar-top-links
+        // /.navbar-static-side
+      // End Top Navigation
+      // ==============================================================
+      // Left Sidebar - style you can find in sidebar.scss
+      // ==============================================================
+      .navbar-default.sidebar(role='navigation')
+        .sidebar-nav.slimscrollsidebar
+          .sidebar-head
+            h3
+              span.fa-fw.open-close
+                i.ti-close.ti-menu
+              span.hide-menu Management
+          ul#side-menu.nav
+            li(style='padding: 70px 0 0;')
+              a.waves-effect(href='#')
+                i.fa.fa-clock-o.fa-fw(aria-hidden='true')
+                | Dashboard
+            li
+              a.waves-effect(href='../user')
+                i.fa.fa-user.fa-fw(aria-hidden='true')
+                | User
+            li
+              a.waves-effect(href='../order')
+                i.fa.fa-shopping-cart.fa-fw(aria-hidden='true')
+                | Order
+            li
+              a.waves-effect(href='../product/index')
+                i.fa.fa-shopping-bag.fa-fw(aria-hidden='true')
+                | Product
+            li
+              a.waves-effect(href='../category')
+                i.fa.fa-shopping-bag.fa-fw(aria-hidden='true')
+                | Category
+            li
+              a.waves-effect(href='../size')
+                i.fa.fa-shopping-bag.fa-fw(aria-hidden='true')
+                | Size
+            li
+              a.waves-effect(href='../color')
+                i.fa.fa-shopping-bag.fa-fw(aria-hidden='true')
+                | Color
+            li
+              a.waves-effect(href='../blog')
+                i.fa.fa-book.fa-fw(aria-hidden='true')
+                | Blog
+            li
+              a.waves-effect(href='../contact')
+                i.fa.fa-phone.fa-fw(aria-hidden='true')
+                | Contact
+            li
+              a.waves-effect(href='../other')
+                i.fa.fa-bars.fa-fw(aria-hidden='true')
+                | Other
+            li
+              a.waves-effect(href='../error/404')
+                i.fa.fa-info-circle.fa-fw(aria-hidden='true')
+                | Error 404
+      block content
+        footer.footer.text-center  2020 &copy; Management Product by Admin
+      // /#page-wrapper
+    // /#wrapper
+    // jQuery
+    script(src='../plugins/bower_components/jquery/dist/jquery.min.js')
+    // Bootstrap Core JavaScript
+    script(src='../bootstrap/dist/js/bootstrap.min.js')
+    // Menu Plugin JavaScript
+    script(src='../plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.js')
+    // slimscroll JavaScript
+    script(src='../js/jquery.slimscroll.js')
+    // Wave Effects
+    script(src='../js/waves.js')
+    // Custom Theme JavaScript
+    script(src='../js/custom.min.js')
+    script(src="../js/popup.js")
+    

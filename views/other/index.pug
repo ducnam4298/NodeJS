@@ -1,0 +1,33 @@
+extends ../layout/auth-layout
+block content
+  #page-wrapper
+    .container-fluid
+      .row.bg-title
+        .col-lg-3.col-md-4.col-sm-4.col-xs-12
+          h4.page-title Others
+        .row
+          .col-sm-12
+            .white-box
+              //- h3.box-title Basic Table
+              p.text-muted
+                a.btn.btn-danger Add Other
+              .table-responsive
+                table.table
+                  thead
+                    tr
+                      th ID
+                      th Product Name
+                      th Category
+                      th Price
+                      th(width='10px')
+                      th(width='10px')
+                  tbody
+                    tr
+                      td mã
+                      td tên
+                      td loại
+                      td giá
+                      td
+                        a.btn.btn-primary update
+                      td
+                        a.btn.btn-primary delete

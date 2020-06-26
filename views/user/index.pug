@@ -1,0 +1,106 @@
+extends ../layout/auth-layout
+block content
+  #page-wrapper
+    .container-fluid
+      .row.bg-title
+        .col-lg-3.col-md-4.col-sm-4.col-xs-12
+          h4.page-title Users
+        .row
+          .col-sm-12
+            .white-box
+              //- h3.box-title Basic Table
+              p.text-muted
+                #add-popup.popup
+                  // Modal content
+                  .popup-content
+                    span.popupclose(onclick='closePopupAdd();') &times;
+                    h3 Add User
+                    form(method='post' name='popupcontact' onsubmit='popupvalidation();' action='#')
+                      .col-md-12
+                        lable
+                          | Name 
+                          span.required *
+                        input(type='text' name='name')
+                      .col-md-12
+                        lable
+                          | Address
+                          span.required *
+                        input(type='text' name='address')
+                      .col-md-12
+                        lable
+                          | Phone Number 
+                          span.required *
+                        input(type='text' name='phone')
+                      .col-md-12
+                        lable
+                          | Email 
+                          span.required *
+                        input(type='email' name='email')
+                      .col-md-12
+                        lable
+                          | Password 
+                          span.required *
+                        input(type='password' name='phone')
+                      .col-md-12
+                        input.btn.btn-success(type='submit' name='popupcontact' value='Submit')
+                    .clearfix
+                  .clearfix
+                input.btn.btn-danger(type='button' value='Add User' onclick='openPopupAdd();')
+
+              .table-responsive
+                table.table
+                  thead
+                    tr
+                      th ID
+                      th Full Name
+                      th Address
+                      th Phone Number
+                      th Email
+                      th(width='10px')
+                      th(width='10px')
+                  tbody
+                    tr
+                      td a
+                      td b
+                      td c
+                      td d
+                      td e 
+                      td
+                        #update-popup.popup
+                          // Modal content
+                          .popup-content
+                            span.popupclose(onclick='closePopupUpdate();') &times;
+                            h3 Update User
+                            form(method='post' name='popupcontact' onsubmit='popupvalidation();' action='#')
+                              .col-md-12
+                                lable
+                                  | Name 
+                                  span.required *
+                                input(type='text' name='name')
+                              .col-md-12
+                                lable
+                                  | Address
+                                  span.required *
+                                input(type='text' name='address')
+                              .col-md-12
+                                lable
+                                  | Phone Number 
+                                  span.required *
+                                input(type='text' name='phone')
+                              .col-md-12
+                                lable
+                                  | Email 
+                                  span.required *
+                                input(type='email' name='email')
+                              .col-md-12
+                                lable
+                                  | Password 
+                                  span.required *
+                                input(type='password' name='password')
+                              .col-md-12
+                                input.btn.btn-success(type='submit' name='popupcontact' value='Submit')
+                            .clearfix
+                          .clearfix
+                        input.btn.btn-primary(type='button' value='Update' onclick='openPopupUpdate();')
+                      td
+                        a.btn.btn-primary Delete

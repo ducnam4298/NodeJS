@@ -1,0 +1,92 @@
+extends ../layout/auth-layout
+block content
+  #page-wrapper
+    .container-fluid
+      .row.bg-title
+        .col-lg-3.col-md-4.col-sm-4.col-xs-12
+          h4.page-title Sizes
+        .row
+          .col-sm-12
+            .white-box
+              //- h3.box-title Basic Table
+              p.text-muted
+                #add-popup.popup
+                  // Modal content
+                  .popup-content
+                    span.popupclose(onclick='closePopupAdd();') &times;
+                    h3 Add Size
+                    form(method='post' name='popupcontact' onsubmit='popupvalidation();' action='#')
+                      .col-md-12
+                        lable
+                          | Name 
+                          span.required *
+                        input(type='text' name='username')
+                      .col-md-12
+                        lable
+                          | Email 
+                          span.required *
+                        input(type='text' name='uemail')
+                      .col-md-12
+                        lable
+                          | Phone No. 
+                          span.required *
+                        input(type='text' name='uphoneno')
+                      .col-md-12
+                        lable
+                          | Message 
+                          span.required *
+                        textarea(name='umessage' placeholder='' style='height: 130px;')
+                      .col-md-12
+                        input.btn.btn-success(type='submit' name='popupcontact' value='Submit')
+                    .clearfix
+                  .clearfix
+                input.btn.btn-danger(type='button' value='Add Size' onclick='openPopupAdd();')                    
+              .table-responsive
+                table.table
+                  thead
+                    tr
+                      th ID
+                      th Size Name
+                      th Color
+                      th(width='10px')
+                      th(width='10px')
+                  tbody
+                    tr
+                      td a
+                      td b
+                      td c
+                      td
+                        #update-popup.popup
+                          // Modal content
+                          .popup-content
+                            span.popupclose(onclick='closePopupUpdate();') &times;
+                            h3 Update Size
+                            form(method='post' name='popupcontact' onsubmit='popupvalidation();' action='#')
+                              .col-md-12
+                                lable
+                                  | Name 
+                                  span.required *
+                                input(type='text' name='username')
+                              .col-md-12
+                                lable
+                                  | Email 
+                                  span.required *
+                                input(type='text' name='uemail')
+                              .col-md-12
+                                lable
+                                  | Phone No. 
+                                  span.required *
+                                input(type='text' name='uphoneno')
+                              .col-md-12
+                                lable
+                                  | Message 
+                                  span.required *
+                                textarea(name='umessage' placeholder='' style='height: 130px;')
+                              .col-md-12
+                                input.btn.btn-success(type='submit' name='popupcontact' value='Submit')
+                            .clearfix
+                          .clearfix
+                        input.btn.btn-primary(type='button' value='Update' onclick='openPopupUpdate();')
+                      
+                      td
+                        a.btn.btn-primary Delete
