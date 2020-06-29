@@ -1,0 +1,26 @@
+extends ../layout/auth-layout
+block content
+
+  #page-wrapper
+    .container-fluid
+      .row.bg-title
+        .col-lg-3.col-md-4.col-sm-4.col-xs-12
+          h4.page-title Colors
+        .row
+          .col-sm-12
+            .white-box
+              p.text-muted
+                a.btn.btn-danger(href='/color') Back
+                // Modal content
+                .popup-content
+                  h3 Update Color
+                  form(method='post' action='/color/update/'+color._id)
+                    .col-md-12
+                      label
+                        | Name 
+                        span.required *                                  
+                      input(type='text' name='name' value=color.name required)
+                    .col-md-12
+                      input.btn.btn-success(type='submit' value='Submit')
+                  .clearfix
+                .clearfix

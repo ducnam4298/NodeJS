@@ -16,7 +16,7 @@ const productRouter = require('./routes/product');
 const categoryRouter = require('./routes/category');
 const errorRouter = require('./routes/error');
 const otherRouter = require('./routes/other');
-const authRouter = require('./routes/auth');
+// const authRouter = require('./routes/auth');
 // const authRouter = require('./routes/auth');
 // const aboutRouter = require('./routes/about');
 // const blogDetailRouter = require('./routes/blog-detail');
@@ -46,7 +46,7 @@ app.use('/category', categoryRouter);
 app.use('/error', errorRouter);
 app.use('/other', otherRouter);
 
-app.use('/auth',authRouter);
+// app.use('/auth',authRouter);
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
   next(createError(404));

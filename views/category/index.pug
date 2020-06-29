@@ -8,7 +8,6 @@ block content
         .row
           .col-sm-12
             .white-box
-              //- h3.box-title Basic Table
               p.text-muted
                 #add-popup.popup
                   // Modal content
@@ -41,26 +40,8 @@ block content
                       td #{category._id}
                       td #{category.name}
                       td
-                        #update-popup.popup
-                          // Modal content
-                          .popup-content
-                            span.popupclose(onclick='closePopupUpdate();') &times;
-                            h3 Update Category
-                            form(method='post' action='../category/update')
-                              .col-md-12
-                                label
-                                  | Name 
-                                  span.required *                                  
-                                input(type='text' name='_id' value=category._id hidden )
-                                input(type='text' name='name' value=category.name required)
-                              .col-md-12
-                                input.btn.btn-success(type='submit' value='Submit')
-                            .clearfix
-                          .clearfix
-                        input.btn.btn-primary(type='button' value='Update' onclick='openPopupUpdate();')
+                        a.btn.btn-primary(href='../category/edit/'+category._id) Update
                       td
-                        form(method='post' action='../category/delete')
-                          .col-md-12                              
-                            input(type='text' name='_id' value=category._id hidden )
+                        form(method='post' action='../category/delete/'+category._id)
                           .col-md-12
                             input.btn.btn-primary(type='submit' value='Delete' onclick='deleteChoice();')

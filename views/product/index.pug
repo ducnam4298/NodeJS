@@ -9,39 +9,60 @@ block content
           .col-sm-12
             .white-box
               //- h3.box-title Basic Table
-              p.text-muted
+              p.text-muted 
                 #add-popup.popup
                   // Modal content
                   .popup-content
                     span.popupclose(onclick='closePopupAdd();') &times;
                     h3 Add Product
-                    form(method='post' name='popupcontact' onsubmit='popupvalidation();' action='#')
+                    form(method='post' action='#')
                       .col-md-12
                         label
                           | Name 
                           span.required *
-                        input(type='text' name='username')
+                        input(type='text' name='name' required)
                       .col-md-12
                         label
-                          | Email 
+                          | Category
                           span.required *
-                        input(type='text' name='uemail')
+                        select.box(name="category")
+                          each category in listCategories
+                            option(value=category._id) #{category.name}
+                      .col-md-4
+                        label
+                          | Color
+                          span.required *
+                        select.box(name="size")
+                          each color in listColors
+                            option(value=color._id) #{color.name}
+                      .col-md-4
+                        label
+                          | Size
+                          span.required *
+                        select.box(name="size")
+                          each size in listSizes
+                            option(value=size._id) #{size.name}
+                      .col-md-4
+                        label
+                          | Quantity
+                          span.required *
+                        input(type='number' name='quantity' min='0' required)
                       .col-md-12
                         label
-                          | Phone No. 
+                          | Price
                           span.required *
-                        input(type='text' name='uphoneno')
+                        input(type='number' name='price' min='0' required)
                       .col-md-12
                         label
-                          | Message 
+                          | Image
                           span.required *
-                        textarea(name='umessage' placeholder='' style='height: 130px;')
+                        input(type="file" name="image" required)
                       .col-md-12
-                        input.btn.btn-success(type='submit' name='popupcontact' value='Submit')
+                        input.btn.btn-success(type='submit' value='Submit')
                     .clearfix
                   .clearfix
                 input.btn.btn-danger(type='button' value='Add Product' onclick='openPopupAdd();')
-                
+
               .table-responsive
                 ul.nav.navbar-top-links
                   li
@@ -59,6 +80,7 @@ block content
                       th Product Name
                       th Category
                       th Price
+                      th Detail
                       th(width='10px')
                       th(width='10px')
                   tbody
@@ -67,37 +89,12 @@ block content
                       td b
                       td c
                       td d
+                      td e
                       td
-                        #update-popup.popup
-                          // Modal content
-                          .popup-content
-                            span.popupclose(onclick='closePopupUpdate();') &times;
-                            h3 Update Product
-                            form(method='post' name='popupcontact' onsubmit='popupvalidation();' action='#')
-                              .col-md-12
-                                label
-                                  | Name 
-                                  span.required *
-                                input(type='text' name='username')
-                              .col-md-12
-                                label
-                                  | Email 
-                                  span.required *
-                                input(type='text' name='uemail')
-                              .col-md-12
-                                label
-                                  | Phone No. 
-                                  span.required *
-                                input(type='text' name='uphoneno')
-                              .col-md-12
-                                label
-                                  | Message 
-                                  span.required *
-                                textarea(name='umessage' placeholder='' style='height: 130px;')
-                              .col-md-12
-                                input.btn.btn-success(type='submit' name='popupcontact' value='Submit')
-                            .clearfix
-                          .clearfix
-                        input.btn.btn-primary(type='button' value='Update' onclick='openPopupUpdate();')
+                        //- a.btn.btn-primary(href='../size/edit/'+size._id) Update
+                        a.btn.btn-primary(href='../size/edit/') Update
                       td
-                        a.btn.btn-primary Delete
+                        //- form(method='post' action='../size/delete/'+size._id)
+                        form(method='post' action='../size/delete/')
+                          .col-md-12
+                            input.btn.btn-primary(type='submit' value='Delete' onclick='deleteChoice();')                        

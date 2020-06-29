@@ -12,8 +12,6 @@ const sizeSchema = new Schema({
             message: props => `${props.value}is not a valid name`
         }
     },
-    color: new Array(),
-    quantity: { type: Number, required: true },
     created_at: { type: Date, default: Date.now },
     updated_at: { type: Date, default: Date.now }
 });

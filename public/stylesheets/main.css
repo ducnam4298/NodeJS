@@ -2968,6 +2968,7 @@ input.num-product::-webkit-inner-spin-button {
 .how-itemcart1::after {
   content: '\e870';
   font-family: Linearicons-Free;
+  /* font-family: "Font Awesome 5 Free"; */
   font-size: 16px;
   display: -webkit-box;
   display: -webkit-flex;
