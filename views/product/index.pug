@@ -15,7 +15,7 @@ block content
                   .popup-content
                     span.popupclose(onclick='closePopupAdd();') &times;
                     h3 Add Product
-                    form(method='post' action='#')
+                    form(method='post' action='../product/store' enctype="multipart/form-data")
                       .col-md-12
                         label
                           | Name 
@@ -25,23 +25,23 @@ block content
                         label
                           | Category
                           span.required *
-                        select.box(name="category")
+                        select.box(name="category_id")
                           each category in listCategories
-                            option(value=category._id) #{category.name}
+                            option(value=`${category._id}`) #{category.name}
                       .col-md-4
                         label
                           | Color
                           span.required *
-                        select.box(name="size")
+                        select.box(name="color_id")
                           each color in listColors
-                            option(value=color._id) #{color.name}
+                            option(value=`${color._id}`) #{color.name}
                       .col-md-4
                         label
                           | Size
                           span.required *
-                        select.box(name="size")
+                        select.box(name="size_id")
                           each size in listSizes
-                            option(value=size._id) #{size.name}
+                            option(value=`${size._id}`) #{size.name}
                       .col-md-4
                         label
                           | Quantity
@@ -54,6 +54,11 @@ block content
                         input(type='number' name='price' min='0' required)
                       .col-md-12
                         label
+                          | Description 
+                          span.required *
+                        input(type='text' name='description' required)
+                      .col-md-12
+                        label
                           | Image
                           span.required *
                         input(type="file" name="image" required)
@@ -62,7 +67,6 @@ block content
                     .clearfix
                   .clearfix
                 input.btn.btn-danger(type='button' value='Add Product' onclick='openPopupAdd();')
-
               .table-responsive
                 ul.nav.navbar-top-links
                   li
@@ -81,20 +85,23 @@ block content
                       th Category
                       th Price
                       th Detail
+                      th
+                      th
                       th(width='10px')
                       th(width='10px')
                   tbody
+                  each product in listProducts
                     tr
-                      td a
-                      td b
-                      td c
-                      td d
-                      td e
+                      td #{product._id}
+                      td #{product.name}
+                      td #{product.category}
+                      td #{product.price}
+                      td(width='10px') Color: #{product.detail[0].color}
+                      td(width='10px') Size: #{product.detail[0].size}
+                      td(width='10px') Quantity: #{product.detail[0].quantity}
                       td
-                        //- a.btn.btn-primary(href='../size/edit/'+size._id) Update
-                        a.btn.btn-primary(href='../size/edit/') Update
+                        a.btn.btn-primary(href=`../product/edit/${product._id}`) Update
                       td
-                        //- form(method='post' action='../size/delete/'+size._id)
-                        form(method='post' action='../size/delete/')
+                        form(method='post' action=`../product/delete/${product._id}`)
                           .col-md-12
                             input.btn.btn-primary(type='submit' value='Delete' onclick='deleteChoice();')                        

@@ -16,15 +16,10 @@ const productRouter = require('./routes/product');
 const categoryRouter = require('./routes/category');
 const errorRouter = require('./routes/error');
 const otherRouter = require('./routes/other');
-// const authRouter = require('./routes/auth');
-// const authRouter = require('./routes/auth');
-// const aboutRouter = require('./routes/about');
-// const blogDetailRouter = require('./routes/blog-detail');
 const app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-console.log(__dirname);
 
 app.set('view engine', 'pug');
 app.use(bodyParser.json())

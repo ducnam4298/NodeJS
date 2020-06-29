@@ -12,13 +12,14 @@ const productSchema = new Schema({
             message: props => `${props.value}is not a valid name`
         }
     },
-    category: { type: String },
+    category: { type: String, required: true },
     detail: [{
         color: { type: String, required: true },
         size: { type: String, required: true },
         quantity: { type: Number, required: true }
     }],
     price: { type: Number, required: true },
+    description: { type: String },
     image: [String],
     created_at: { type: Date, default: Date.now },
     updated_at: { type: Date, default: Date.now }

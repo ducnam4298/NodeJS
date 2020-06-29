@@ -66,7 +66,7 @@ router.post('/update/:size_id', async (req, res, next) => {
 });
 
 router.post('/delete/:size_id', async (req, res, next) => {
-  let size_id = req.params.size_id;
+  const size_id = req.params.size_id;
   Size.findByIdAndRemove(size_id, (err, doc) => {
     if (err) throw err;
     res.redirect('/size');

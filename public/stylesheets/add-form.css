@@ -47,7 +47,7 @@
   cursor: pointer;
 }
 
-.box,input[type="text"],input[type="file"], input[type="email"], input[type="password"], textarea {
+.box,input[type="text"],input[type="number"],input[type="file"], input[type="email"], input[type="password"], textarea {
   width: 100%;
   border: 1px solid #cccccc;
   margin-bottom: 10px;
